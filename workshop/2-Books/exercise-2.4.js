@@ -69,6 +69,13 @@ class BookList {
     }
     return booksUnread;
   };
+  startReading = (bookTitle) => {
+    this.currentlyReading = bookTitle;
+  };
+  finishReading = (bookTitle) => {
+    this.currentlyReading = "null";
+    this.lastRead = bookTitle;
+  };
 }
 
 const homeLibrary = new BookList();
@@ -95,6 +102,6 @@ console.log("Last-read, after finishing The Shining", homeLibrary.lastRead); // 
 
 homeLibrary.startReading("The Revisionists");
 console.log(
-  "Currentky reading, After starting The Revisionists",
+  "Currently reading, After starting The Revisionists",
   homeLibrary.currentlyReading
 ); // should be The Revisionists book
